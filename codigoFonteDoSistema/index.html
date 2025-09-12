@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>EstudaENEM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">EstudaENEM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="disciplinas.html">Disciplinas</a></li>
+          <li class="nav-item"><a class="nav-link" href="simulados.html">Simulados</a></li>
+          <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" href="politica.html">Política</a></li>
+          <li class="nav-item"><a class="nav-link" href="termos.html">Termos</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h1>Bem-vindo ao EstudaENEM</h1>
+    <p>Prepare-se para o ENEM com conteúdos organizados por matéria, simulados e contato com nossa equipe!</p>
+
+   <div id="carouselExemplo" class="carousel slide" data-bs-ride="carousel" style="max-width: 700px; margin: auto;">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExemplo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExemplo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExemplo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+  <div class="carousel-inner rounded border border-primary">
+    <div class="carousel-item active">
+      <img src="src/img/imagem1.jpg" class="d-block w-100" alt="Slide 1">
+      <div class="carousel-caption d-none d-md-block" style="filter: invert(1);">
+        <h5>Slide 1</h5>
+        <p>Descrição do primeiro slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="src/img/imagem2.jpg" class="d-block w-100" alt="Slide 2">
+      <div class="carousel-caption d-none d-md-block" style="filter: invert(1);">
+        <h5>Slide 2</h5>
+        <p>Descrição do segundo slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="src/img/imagem3.jpg" class="d-block w-100" alt="Slide 3">
+      <div class="carousel-caption d-none d-md-block" style="filter: invert(1);">
+        <h5>Slide 3</h5>
+        <p>Descrição do terceiro slide.</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExemplo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExemplo" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
+    <span class="visually-hidden">Próximo</span>
+  </button>
+</div>
+
+  </button>
+</div>
+
+  </div>
+
+
+  
+  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:10px; text-align:center; z-index:9999;">
+    Este site usa cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa
+    <a href="politica.html" style="color:#0f0;">Política de Privacidade</a>.
+    <button onclick="aceitarCookies()" class="btn btn-success btn-sm ms-2">Aceitar</button>
+  </div>
+
+
+  
+  <script>
+    function aceitarCookies() {
+      localStorage.setItem('cookies_aceitos', 'sim');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    window.onload = function () {
+      if (localStorage.getItem('cookies_aceitos') === 'sim') {
+        document.getElementById('cookie-banner').style.display = 'none';
+      }
+    };
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
