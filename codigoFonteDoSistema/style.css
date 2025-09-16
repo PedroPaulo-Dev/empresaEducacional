@@ -1,0 +1,30 @@
+
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header h1 {
+    font-weight: bold;
+  }
+  
+  .card-title {
+    color: #0d6efd;
+  }
+  
+  footer p, footer a {
+    font-size: 14px;
+  }
+
+  .contact-form {
+      grid-column: span 2;
+  }
+
+  .contact-form .form-grid{
+      border: none;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--gap);
+
+}
+

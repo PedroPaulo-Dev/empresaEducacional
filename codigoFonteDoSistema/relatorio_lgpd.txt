@@ -1,0 +1,24 @@
+
+EstudaENEM - Conformidade com a LGPD
+
+1. Tipos de dados pessoais:
+- Nome e e-mail (formulário de contato)
+- Cookies (preferências e navegação)
+
+2. Bases legais:
+- Consentimento (formulário e cookies)
+
+3. Riscos e mitigação:
+- Vazamento -> uso de HTTPS e dados mínimos
+- Coleta sem permissão -> banner de cookies
+
+4. Direitos dos titulares:
+- Contato via e-mail para consulta, alteração ou remoção
+
+5. Arquitetura segura:
+- HTML e Bootstrap
+- localStorage para controle de consentimento
+
+6. Mecanismo de aceite:
+- Banner com botão "Aceitar"
+- Links para Política e Termos de Uso
