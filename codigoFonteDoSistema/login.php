@@ -1,12 +1,12 @@
 <?php
 session_start();
-include("conexao.php"); // conecta ao MySQL
+include("conexao.php"); // conexão com banco
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = trim($_POST['email']);         // pega o email do form
-    $senha = $_POST['password'];            // pega a senha do form (antes era 'senha')
+    $email = trim($_POST['email']);
+    $senha = $_POST['password'];
 
-    // Consulta no banco para ver se existe usuário com esse email
+    // busca usuário pelo email
     $sql = "SELECT * FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
@@ -15,10 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($res->num_rows === 1) {
         $user = $res->fetch_assoc();
-        // Comparação de senha em texto puro
-        if ($senha === $user['password']) {
+
+        // verifica senha criptografada
+        if (password_verify($senha, $user['password'])) {
             $_SESSION['usuario'] = $user['email'];
-            header("location:welcome.html"); // login ok → vai pra home
+            header("Location: welcome.php"); // redireciona
             exit();
         } else {
             echo "<p style='color:red; text-align:center;'>Senha incorreta!</p>";
