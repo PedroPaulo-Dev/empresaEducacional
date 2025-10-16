@@ -1,5 +1,5 @@
 <?php
-include("conexao.php");
+include("../config/conexao.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = trim($_POST['username']);
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("ssss", $username, $email, $password, $role);
 
     if($stmt->execute()){
-        echo "Cadastro realizado com sucesso! <a href='login.html'>Login</a>";
+        echo "Cadastro realizado com sucesso! <a href='../visual/login.html'>Login</a>";
     } else {
         echo "Erro ao cadastrar: " . $stmt->error;
     }

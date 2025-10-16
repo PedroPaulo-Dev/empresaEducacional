@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("ssss", $username, $email, $password, $role);
 
     if($stmt->execute()){
-        header("Location: welcome.php"); // volta para a lista de usuários
+        header("Location: ../visual/welcome.php"); // volta para a lista de usuários
         exit;
     } else {
         echo "Erro ao criar usuário: " . $stmt->error;
@@ -37,6 +37,6 @@ $conn->close();
     <input type="text" name="role" placeholder="Role"><br>
     <button type="submit">Criar</button>
   </form>
-  <a href="welcome.php">Voltar</a>
+  <a href="../visual/welcome.php">Voltar</a>
 </body>
 </html>

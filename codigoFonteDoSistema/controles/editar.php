@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt = $conn->prepare("UPDATE users SET username=?, email=?, role=? WHERE id=?");
     $stmt->bind_param("sssi", $username, $email, $role, $id);
     $stmt->execute();
-    header("Location: welcome.php");
+    header("Location: ../visual/welcome.php");
     exit;
 }
 ?>
@@ -37,6 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input type="text" name="role" value="<?= $user['role'] ?>"><br>
     <button type="submit">Atualizar</button>
   </form>
-  <a href="welcome.php">Voltar</a>
+  <a href="../visual/welcome.php">Voltar</a>
 </body>
 </html>

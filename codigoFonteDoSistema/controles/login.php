@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // verifica senha criptografada
         if (password_verify($senha, $user['password'])) {
             $_SESSION['usuario'] = $user['email'];
-            header("Location: welcome.php"); // redireciona
+            header("Location: ../visual/welcome.php"); // redireciona
             exit();
         } else {
             echo "<p style='color:red; text-align:center;'>Senha incorreta!</p>";

@@ -7,6 +7,6 @@ if($id){
     $stmt->bind_param("i", $id);
     $stmt->execute();
 }
-header("Location: welcome.php");
+header("Location: ../visual/welcome.php");
 exit;
 ?>

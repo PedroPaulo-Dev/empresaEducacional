@@ -5,7 +5,9 @@ if(!isset($_SESSION['usuario'])){
     exit();
 }
 
-include("conexao.php");
+include(__DIR__ . "/../controles/conexao.php");
+
+
 
 // Buscar dados do usuário logado
 $email = $_SESSION['usuario'];
@@ -38,8 +40,8 @@ a.button:hover { background:#1666c1; }
 <body>
 <div class="container">
   <h1>Bem-vindo(a), <?= htmlspecialchars($user['username']) ?>!</h1>
-  <a href="logout.php" class="button">Sair</a>
-  <a href="criar.php" class="button">Adicionar Usuário</a>
+  <a href="../controles/logout.php" class="button">Sair</a>
+  <a href="../controles/criar.php" class="button">Adicionar Usuário</a>
 
   <h2>Todos os usuários</h2>
   <table>
@@ -57,8 +59,8 @@ a.button:hover { background:#1666c1; }
       <td><?= htmlspecialchars($row['email']) ?></td>
       <td><?= htmlspecialchars($row['role']) ?></td>
       <td>
-        <a href="editar.php?id=<?= $row['id'] ?>">Editar</a>
-        <a href="deletar.php?id=<?= $row['id'] ?>" onclick="return confirm('Tem certeza?')">Deletar</a>
+        <a href="../controles/editar.php?id=<?= $row['id'] ?>">Editar</a>
+        <a href="../controles/deletar.php?id=<?= $row['id'] ?>" onclick="return confirm('Tem certeza?')">Deletar</a>
       </td>
     </tr>
     <?php endwhile; ?>
