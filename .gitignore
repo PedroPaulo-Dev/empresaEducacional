@@ -1,0 +1,11 @@
+    # Ignorar conexão e arquivos sensíveis
+    codigoFonteDoSistema/controles/conexao.php
+
+    # Ignorar arquivos de log ou ambiente
+    *.log
+    *.env
+
+    # Ignorar pastas de build ou dependências
+    node_modules/
+    vendor/
+
