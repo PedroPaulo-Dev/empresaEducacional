@@ -1,8 +1,8 @@
 <?php
 include("conexao.php");
 
-$email = "dias@gmail.com";
-$senha_nova = "12345"; // senha atual
+$email = "admin@gmail";
+$senha_nova = "1234"; // senha atual
 
 // Criptografa a senha
 $senha_cript = password_hash($senha_nova, PASSWORD_DEFAULT);

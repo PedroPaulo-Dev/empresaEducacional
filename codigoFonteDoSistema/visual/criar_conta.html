@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - EstudaEnem</title>
+    <title>Criar Conta - EstudaEnem</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -15,7 +15,7 @@
         background-color: #f1f1f1;
       }
 
-      .login-box {
+      .register-box {
         background: #fff;
         padding: 40px;
         border-radius: 8px;
@@ -24,25 +24,26 @@
         text-align: center;
       }
 
-      .login-box h1 {
+      .register-box h1 {
         font-size: 28px;
         color: #1a73e8;
         margin-bottom: 20px;
         font-weight: bold;
       }
 
-      .login-box h2 {
+      .register-box h2 {
         font-size: 22px;
         margin-bottom: 10px;
       }
 
-      .login-box p {
+      .register-box p {
         color: #555;
         margin-bottom: 20px;
         font-size: 14px;
       }
 
-      .login-box input {
+      .register-box input,
+      .register-box select {
         width: 100%;
         padding: 12px;
         margin: 10px 0;
@@ -51,7 +52,7 @@
         font-size: 14px;
       }
 
-      .login-box button {
+      .register-box button {
         width: 100%;
         padding: 12px;
         background-color: #1a73e8;
@@ -62,40 +63,52 @@
         cursor: pointer;
       }
 
-      .login-box button:hover {
+      .register-box button:hover {
         background-color: #1666c1;
       }
 
-      .login-box .link {
+      .register-box .link {
         margin-top: 15px;
         font-size: 13px;
       }
 
-      .login-box .link a {
+      .register-box .link a {
         color: #1a73e8;
         text-decoration: none;
       }
 
-      .login-box .link a:hover {
+      .register-box .link a:hover {
         text-decoration: underline;
       }
     </style>
   </head>
   <body>
-    <div class="login-box">
+    <div class="register-box">
       <h1>EstudaEnem</h1>
-      <h2>Fazer login</h2>
-      <p>Use sua conta para acessar</p>
+      <h2>Criar Conta</h2>
+      <p>Preencha os dados para se cadastrar</p>
 
-      <form action="../controles/login.php" method="POST">
+      <form action="../controles/cadastrar.php" method="POST">
+        <input
+          type="text"
+          name="username"
+          placeholder="Nome de usuário"
+          required
+        />
         <input type="email" name="email" placeholder="Email" required />
         <input type="password" name="password" placeholder="Senha" required />
-        <button type="submit">Entrar</button>
+
+        <select name="role" required>
+          <option value="">Selecione o tipo de conta</option>
+          <option value="aluno">Aluno</option>
+          <option value="professor">Professor</option>
+        </select>
+
+        <button type="submit">Criar Conta</button>
       </form>
 
       <div class="link">
-        <p><a href="#">Esqueceu sua senha?</a></p>
-        <p>Não tem uma conta? <a href="criar_conta.html">Criar conta</a></p>
+        <p>Já tem uma conta? <a href="login.html">Fazer login</a></p>
       </div>
     </div>
   </body>

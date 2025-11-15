@@ -1,13 +1,11 @@
 <?php
 session_start();
-if(!isset($_SESSION['usuario'])){
+if(!isset($_SESSION['usuario']) || !isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
     header("Location: login.html");
     exit();
 }
 
 include(__DIR__ . "/../controles/conexao.php");
-
-
 
 // Buscar dados do usuário logado
 $email = $_SESSION['usuario'];
@@ -24,9 +22,9 @@ $users = $conn->query("SELECT id, username, email, role FROM users");
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Bem-vindo - EstudaEnem</title>
+<title>Bem-vindo Admin - EstudaEnem</title>
 <style>
-body { font-family: Arial; background:#f1f1f1; padding:20px; }
+body { font-family: Arial; background:#f1f5fb; padding:20px; color:#1a73e8; }
 .container { max-width:800px; margin:0 auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
 h1 { color:#1a73e8; }
 table { width:100%; border-collapse:collapse; margin-top:20px; }
@@ -39,7 +37,7 @@ a.button:hover { background:#1666c1; }
 </head>
 <body>
 <div class="container">
-  <h1>Bem-vindo(a), <?= htmlspecialchars($user['username']) ?>!</h1>
+  <h1>Bem-vindo(a), <?= htmlspecialchars($user['username']) ?> (Admin)!</h1>
   <a href="../controles/logout.php" class="button">Sair</a>
   <a href="../controles/criar.php" class="button">Adicionar Usuário</a>
 
